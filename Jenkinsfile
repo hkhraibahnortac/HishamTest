@@ -22,12 +22,12 @@ pipeline {
         failure {
             emailext attachmentsPattern: 'test.zip', body: '''${SCRIPT, template="groovy-html.template"}''', 
                     subject: "${env.JOB_NAME} - Build # ${env.BUILD_NUMBER} - Failed", 
-                    mimeType: 'text/html',to: "djw@nortacdefence.com"
+                    mimeType: 'text/html',to: "ij@nortacdefence.com"
             }
          success {
                emailext attachmentsPattern: 'test.zip', body: '''${SCRIPT, template="groovy-html.template"}''', 
                     subject: "${env.JOB_NAME} - Build # ${env.BUILD_NUMBER} - Successful", 
-                    mimeType: 'text/html',to: "djw@nortacdefence.com"
+                    mimeType: 'text/html',to: "ij@nortacdefence.com"
           }      
     }
 }
