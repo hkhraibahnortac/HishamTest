@@ -18,7 +18,6 @@ pipeline {
             }
         }
     }
-    
     post {
         failure {
             emailext attachmentsPattern: 'test.zip', body: '''${SCRIPT, template="groovy-html.template"}''',
